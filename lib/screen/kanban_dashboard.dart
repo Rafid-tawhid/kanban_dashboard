@@ -128,7 +128,7 @@ class _KanbanTvDashboardState extends ConsumerState<KanbanTvDashboard> {
                 const SizedBox(width: 6),
                 _buildLegendDot(const Color(0xFFFF00DC), 'Output'),
                 const SizedBox(width: 6),
-                _buildLegendDot(const Color(0xFFFF006E), 'Refill'),
+                _buildLegendDot(const Color(0xFFFFD700), 'Refill'),
               ],
             ),
           ),
@@ -256,44 +256,40 @@ class _KanbanTvDashboardState extends ConsumerState<KanbanTvDashboard> {
   }
 
   Widget _buildRefreshInfo() {
-    return Positioned(
-      top: 8,
-      right: 8,
-      child: StreamBuilder(
-        stream: Stream.periodic(const Duration(seconds: 1)),
-        builder: (context, snapshot) {
-          if (_nextRefreshTime == null) return const SizedBox();
+    return StreamBuilder(
+      stream: Stream.periodic(const Duration(seconds: 1)),
+      builder: (context, snapshot) {
+        if (_nextRefreshTime == null) return const SizedBox();
 
-          final now = DateTime.now();
-          final remaining = _nextRefreshTime!.difference(now).inSeconds;
+        final now = DateTime.now();
+        final remaining = _nextRefreshTime!.difference(now).inSeconds;
 
-          return Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.6),
-              borderRadius: BorderRadius.circular(4),
-            ),
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.refresh,
-                  size: 12,
-                  color: Colors.blue,
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.6),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          child: Row(
+            children: [
+              const Icon(
+                Icons.refresh,
+                size: 12,
+                color: Colors.blue,
+              ),
+              const SizedBox(width: 4),
+              Text(
+                '${remaining}s',
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
-                const SizedBox(width: 4),
-                Text(
-                  '${remaining}s',
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
