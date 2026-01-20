@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../models/kanban_entity.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class UltraCompactKanbanCard extends StatelessWidget {
   final KanbanEntity? card;
@@ -63,7 +64,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
 
   Widget _buildDataCard() {
     return Padding(
-      padding: const EdgeInsets.all(2),
+      padding: const EdgeInsets.symmetric(horizontal: 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -74,19 +75,21 @@ class UltraCompactKanbanCard extends StatelessWidget {
             children: [
               Text(
                 'K:$kanbanNumber',
-                style: const TextStyle(
-                  fontSize: 14,
+                style: GoogleFonts.roboto(
+                  fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
+                  letterSpacing: 1.2,
                 ),
               ),
               const Spacer(),
               Text(
                 'Qty: ${card?.totalProduction?.toInt() ?? 0}',
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: Colors.white,
+                style: GoogleFonts.roboto(
+                  fontSize: 13,
                   fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  letterSpacing: 1.2,
                 ),
               ),
             ],
