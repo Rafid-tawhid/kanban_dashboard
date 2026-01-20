@@ -63,7 +63,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
 
   Widget _buildDataCard() {
     return Padding(
-      padding: const EdgeInsets.all(3),
+      padding: const EdgeInsets.all(2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -75,7 +75,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
               Text(
                 'K:$kanbanNumber',
                 style: const TextStyle(
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -84,15 +84,13 @@ class UltraCompactKanbanCard extends StatelessWidget {
               Text(
                 'Qty: ${card?.totalProduction?.toInt() ?? 0}',
                 style: const TextStyle(
-                  fontSize: 12,
+                  fontSize: 14,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
-
-          const SizedBox(height: 2),
 
           // Buyer Name
           if (card?.buyerName?.isNotEmpty ?? false)
@@ -102,7 +100,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
                 fontSize: 8,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
-                height: 1.1,
+                height: 1,
               ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -116,7 +114,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
                 fontSize: 8,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
-                height: 1.1,
+                height: 1,
               ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -132,7 +130,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
                   fontSize: 8,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  height: 1.1,
+                  height: 1,
                 ),
                 maxLines: 2, // Allow 2 lines
                 overflow: TextOverflow.ellipsis,
@@ -146,7 +144,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 8,
                 color: Colors.white,
-                height: 1.1,
+                height: 1,
               ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -158,6 +156,6 @@ class UltraCompactKanbanCard extends StatelessWidget {
 
   String _truncateText(String text, int maxLength) {
     if (text.length <= maxLength) return text;
-    return '${text.substring(0, maxLength)}';
+    return text.substring(0, maxLength);
   }
 }

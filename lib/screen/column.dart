@@ -29,7 +29,7 @@ class CompactLineColumn extends StatelessWidget {
     final cardMap = _createCardMap();
 
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+      margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
         border: Border.all(color: Colors.grey[800]!, width: 0.5),
@@ -65,19 +65,23 @@ class CompactLineColumn extends StatelessWidget {
             padding: const EdgeInsets.all(3),
             child: Column(
               children: List.generate(5, (index) {
-                final kanbanType = '${index + 1}'; // Just the number: 1, 2, 3, 4, 5
+                final kanbanType =
+                    '${index + 1}'; // Just the number: 1, 2, 3, 4, 5
                 final card = cardMap['Kanban-${index + 1}'];
 
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 3),
                   child: SizedBox(
-                    height: 80, // Very compact height
+                    height: 86, // Very compact height
                     child: card != null
-                        ? UltraCompactKanbanCard(card: card, kanbanNumber: index + 1)
+                        ? UltraCompactKanbanCard(
+                            card: card,
+                            kanbanNumber: index + 1,
+                          )
                         : UltraCompactKanbanCard(
-                      kanbanNumber: index + 1,
-                      isBlank: true,
-                    ),
+                            kanbanNumber: index + 1,
+                            isBlank: true,
+                          ),
                   ),
                 );
               }),
