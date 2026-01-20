@@ -29,7 +29,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
 
     return const Color(0xFF28A745); // Green for Kanban-Ready
   }
-
+  //
   @override
   Widget build(BuildContext context) {
     return Container(
