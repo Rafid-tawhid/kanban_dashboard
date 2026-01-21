@@ -66,7 +66,7 @@ class _KanbanTvDashboardState extends ConsumerState<KanbanTvDashboard> {
     final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.white, // Very dark background
+      backgroundColor: Colors.black, // Very dark background
       body: Stack(
         children: [
           // Main Content
