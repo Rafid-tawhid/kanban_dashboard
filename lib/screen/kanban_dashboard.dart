@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import '../models/kanban_entity.dart';
 import '../riverpod/riverpod.dart';
 import 'column.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 
 class KanbanTvDashboard extends ConsumerStatefulWidget {
@@ -24,13 +25,22 @@ class _KanbanTvDashboardState extends ConsumerState<KanbanTvDashboard> {
   @override
   void initState() {
     super.initState();
+    WakelockPlus.enable();
     _calculateNextRefresh();
     _startAutoRefresh();
   }
 
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      WakelockPlus.enable();
+    }
+  }
+
+
   @override
   void dispose() {
     _autoRefreshTimer?.cancel();
+    WakelockPlus.disable(); // turn off when screen is gone
     super.dispose();
   }
 
