@@ -49,6 +49,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
     );
   }
 
+  //
   Widget _buildBlankCard() {
     return Center(
       child: Text(
