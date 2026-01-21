@@ -64,7 +64,7 @@ class _KanbanTvDashboardState extends ConsumerState<KanbanTvDashboard> {
   Widget build(BuildContext context) {
     final sectionId = ref.watch(sectionProvider);
     final screenSize = MediaQuery.of(context).size;
-
+    //
     return Scaffold(
       backgroundColor: Colors.black, // Very dark background
       body: Stack(
