@@ -70,30 +70,65 @@ class UltraCompactKanbanCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           // Header row with Kanban number and quantity
+          // Row(
+          //   crossAxisAlignment: CrossAxisAlignment.start,
+          //   children: [
+          //     Text(
+          //       'K:$kanbanNumber',
+          //       style: GoogleFonts.roboto(
+          //         fontSize: 13,
+          //         fontWeight: FontWeight.bold,
+          //         color: Colors.white,
+          //         letterSpacing: 1,
+          //       ),
+          //     ),
+          //     const Spacer(),
+          //     Text(
+          //       'Qty: ${card?.totalProduction?.toInt() ?? 0}',
+          //       style: GoogleFonts.roboto(
+          //         fontSize: 13,
+          //         fontWeight: FontWeight.bold,
+          //         color: Colors.white,
+          //         letterSpacing: 1.2,
+          //       ),
+          //     ),
+          //   ],
+          // ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              // K: part — shrinks if needed
+                Text(
                 'K:$kanbanNumber',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: GoogleFonts.roboto(
-                  fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  letterSpacing: 1.2,
+                  letterSpacing: 1,
+                  fontSize: 13
                 ),
               ),
-              const Spacer(),
+
+              Spacer(),// small gap
+
+              // Qty part — takes remaining space
               Text(
                 'Qty: ${card?.totalProduction?.toInt() ?? 0}',
+                maxLines: 1,
+                textAlign: TextAlign.end,
+                overflow: TextOverflow.ellipsis,
                 style: GoogleFonts.roboto(
-                  fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  letterSpacing: 1.2,
+                  letterSpacing: 1,
+                  fontSize: 13
                 ),
               ),
             ],
           ),
+
+
 
           // Buyer Name
           if (card?.buyerName?.isNotEmpty ?? false)

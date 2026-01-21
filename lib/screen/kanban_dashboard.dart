@@ -200,7 +200,8 @@ class _KanbanTvDashboardState extends ConsumerState<KanbanTvDashboard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: groupedData.entries.map((entry) {
               return SizedBox(
-                width: lineWidth - 4, // Account for margins
+                // width: lineWidth-4,
+                width: lineWidth, // Account for margins
                 child: CompactLineColumn(
                   lineName: entry.key,
                   cards: entry.value,
