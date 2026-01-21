@@ -66,7 +66,7 @@ class _KanbanTvDashboardState extends ConsumerState<KanbanTvDashboard> {
     final screenSize = MediaQuery.of(context).size;
     //
     return Scaffold(
-      backgroundColor: Colors.black, // Very dark background
+      backgroundColor: Colors.white, // Very dark background
       body: Stack(
         children: [
           // Main Content
@@ -189,7 +189,7 @@ class _KanbanTvDashboardState extends ConsumerState<KanbanTvDashboard> {
 
         final lineCount = groupedData.length;
         final columnsPerRow = 8; // Fixed 8 columns per row
-        final lineWidth = (screenSize.width - 24) / columnsPerRow;
+        final lineWidth = (screenSize.width - 0) / columnsPerRow; //changed here decrease margin
 
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,

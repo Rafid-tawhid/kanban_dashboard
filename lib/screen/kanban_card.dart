@@ -182,7 +182,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 2,),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           // Header row with Kanban number and quantity - more compact
           Row(
@@ -195,7 +195,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.visible,
                 style: GoogleFonts.roboto(
-                  fontSize: 11, // Slightly smaller for more space
+                  fontSize: 14, // Slightly smaller for more space
                   fontWeight: FontWeight.w900, // Extra bold
                   color: textColor,
                   letterSpacing: 0.8,
@@ -216,7 +216,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
                   textAlign: TextAlign.end,
                   overflow: TextOverflow.visible,
                   style: GoogleFonts.roboto(
-                    fontSize: 11,
+                    fontSize: 14,
                     fontWeight: FontWeight.w900,
                     color: textColor,
                     letterSpacing: 0.8,
@@ -233,13 +233,13 @@ class UltraCompactKanbanCard extends StatelessWidget {
             ],
           ),
 
-
+          SizedBox(height: 2,),
           // Buyer Name - if available
           if (card?.buyerName?.isNotEmpty ?? false)
             _buildDataRow(
               text: card!.buyerName!,
               maxLength: 20,
-              fontSize: 7,
+              fontSize: 8,
               fontWeight: FontWeight.w800,
               textColor: textColor,
             ),
@@ -249,7 +249,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
             _buildDataRow(
               text: 'PO: ${card!.buyerPO!}',
               maxLength: 20,
-              fontSize: 7,
+              fontSize: 8,
               fontWeight: FontWeight.w700,
               textColor: textColor,
             ),
@@ -257,11 +257,11 @@ class UltraCompactKanbanCard extends StatelessWidget {
           // Style - Allow 2 lines if needed
           if (card?.style?.isNotEmpty ?? false)
             SizedBox(
-              height: 14,
+              height: 16,
               child: Text(
                 'Style: ${card!.style}',
                 style: TextStyle(
-                  fontSize: 7,
+                  fontSize: 8,
                   fontWeight: FontWeight.w700,
                   color: textColor,
                   height: 1.0,
@@ -283,7 +283,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
             _buildDataRow(
               text: 'Color: ${card!.color!}',
               maxLength: 20,
-              fontSize: 7,
+              fontSize: 8,
               fontWeight: FontWeight.w600,
               textColor: textColor,
             ),
@@ -305,7 +305,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
         fontSize: fontSize,
         fontWeight: fontWeight,
         color: textColor,
-        height: 1.0,
+
         shadows: [
           Shadow(
             color: Colors.black.withOpacity(0.2),

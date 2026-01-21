@@ -29,10 +29,10 @@ class CompactLineColumn extends StatelessWidget {
     final cardMap = _createCardMap();
 
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+      margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: Colors.grey[800]!, width: 0.5),
+
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -40,7 +40,7 @@ class CompactLineColumn extends StatelessWidget {
           // Line Header - Ultra Compact
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 2),
+            padding: const EdgeInsets.symmetric(vertical:  0),
             decoration: BoxDecoration(
               color: Colors.blue[900]!.withOpacity(0.8),
               borderRadius: const BorderRadius.only(
@@ -62,7 +62,7 @@ class CompactLineColumn extends StatelessWidget {
 
           // Cards Container
           Container(
-            padding: const EdgeInsets.all(3),
+            padding: const EdgeInsets.symmetric(vertical: 3,horizontal: 1),
             child: Column(
               children: List.generate(5, (index) {
                 final kanbanType =
