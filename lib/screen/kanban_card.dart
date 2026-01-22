@@ -101,6 +101,7 @@ class UltraCompactKanbanCard extends StatelessWidget {
     final textColor = _getTextColor();
     final highlightColor = _getHighlightColor();
 
+    //
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
