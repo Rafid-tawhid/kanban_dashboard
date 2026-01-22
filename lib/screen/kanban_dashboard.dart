@@ -188,7 +188,8 @@ class _KanbanTvDashboardState extends ConsumerState<KanbanTvDashboard> {
         }
 
         final lineCount = groupedData.length;
-        final columnsPerRow = 8; // Fixed 8 columns per row
+      //  final columnsPerRow = 8; // Fixed 8 columns per row
+        final columnsPerRow = lineCount;
         final lineWidth = (screenSize.width - 6) / columnsPerRow; //changed here decrease margin
 
         //
