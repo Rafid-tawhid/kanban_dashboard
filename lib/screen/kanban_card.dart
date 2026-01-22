@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import '../models/kanban_entity.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class UltraCompactKanbanCard extends StatelessWidget {
   final KanbanEntity? card;
   final int kanbanNumber;
@@ -48,7 +45,8 @@ class UltraCompactKanbanCard extends StatelessWidget {
         const Color(0xFF007BFF), // Your original blue
         const Color(0xFF0056CC),  // Darker blue for depth
       ];
-    } else if (scan3 == 1 && scan4 == 2) {
+    }
+    else if (scan3 == 1 && scan4 == 2) {
       // Pink/Gold for Output - more vibrant
       return [
         const Color(0xFFFF69B4), // Hot pink
