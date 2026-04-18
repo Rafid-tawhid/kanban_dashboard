@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import '../models/api_response_model.dart';
 import '../screen/use_case.dart';
 import '../service/api_call.dart';
@@ -6,11 +8,22 @@ import '../service/kanban_impl.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
+import '../service/repos.dart';
+// riverpod.dart - Optimized version
+
+import '../models/api_response_model.dart';
+import '../screen/use_case.dart';
+import '../service/api_call.dart';
+import '../service/data_source.dart';
+import '../service/kanban_impl.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../service/repos.dart';
 
+// Add this new provider
+final isRefreshingProvider = StateProvider<bool>((ref) => false);
 
-//final sectionProvider = StateProvider<String?>((ref) => null);
 final sectionProvider = StateProvider<String>((ref) => 'Section A');
 
 final kanbanDataProvider = FutureProvider.autoDispose
