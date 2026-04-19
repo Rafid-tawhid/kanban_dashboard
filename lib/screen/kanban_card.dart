@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../models/kanban_entity.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 // Optimized card with const constructors and RepaintBoundary
 class UltraCompactKanbanCard extends StatelessWidget {
