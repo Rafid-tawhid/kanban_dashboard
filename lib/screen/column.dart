@@ -85,6 +85,8 @@ class CompactLineColumn extends StatelessWidget {
     if (scan3 == 1 && scan4 == 0) return 2;
     return 3;
   }
+
+
 }
 
 
